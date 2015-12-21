@@ -1,0 +1,488 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Sa2-s2-ND9">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="10O-zJ-Kps">
+            <objects>
+                <navigationController id="Sa2-s2-ND9" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="VRO-xv-qYR">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="IMm-NI-B0d"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="brb-q7-xcR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1240.5" y="349.5"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VlX-8M-qeP">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="vXZ-lx-hvc" id="oFG-Bt-Smr"/>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="DiO-rU-lL2"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="VlX-8M-qeP" secondAttribute="trailing" id="CzE-ZF-Y3y"/>
+                            <constraint firstItem="VlX-8M-qeP" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="GeU-tf-2kC"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="VlX-8M-qeP" secondAttribute="bottom" id="b5s-49-Jy6"/>
+                            <constraint firstItem="VlX-8M-qeP" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="fL6-x1-pZh"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="mv8-p9-zsa"/>
+                    <connections>
+                        <outlet property="tableView" destination="VlX-8M-qeP" id="tbv-I1-Mbx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-350" y="349"/>
+        </scene>
+        <!--Characteristic View Controller-->
+        <scene sceneID="Taj-xm-2C4">
+            <objects>
+                <viewController storyboardIdentifier="fly" id="SXN-S2-NTw" customClass="CharacteristicViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="r1T-Rs-10O"/>
+                        <viewControllerLayoutGuide type="bottom" id="4jS-kE-Zhx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zqn-I8-ddI">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KkU-dG-Dkg">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <state key="normal" backgroundImage="play-256-top.png"/>
+                                <variation key="heightClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="99" y="99" width="67" height="59"/>
+                                </variation>
+                                <connections>
+                                    <action selector="send:" destination="SXN-S2-NTw" eventType="touchDown" id="eeD-gw-GzC"/>
+                                    <action selector="up:" destination="SXN-S2-NTw" eventType="touchUpInside" id="k6u-hq-peH"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="duO-i3-Hzh">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <state key="normal" backgroundImage="play-256-left.png"/>
+                                <variation key="heightClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="30" y="150" width="67" height="59"/>
+                                </variation>
+                                <connections>
+                                    <action selector="send:" destination="SXN-S2-NTw" eventType="touchDown" id="PBR-C4-U29"/>
+                                    <action selector="up:" destination="SXN-S2-NTw" eventType="touchUpInside" id="53q-sV-v9M"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3dC-sj-YRn">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <state key="normal" backgroundImage="play-256-right.png"/>
+                                <variation key="heightClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="168" y="150" width="67" height="59"/>
+                                </variation>
+                                <connections>
+                                    <action selector="send:" destination="SXN-S2-NTw" eventType="touchDown" id="rJT-Ep-khS"/>
+                                    <action selector="up:" destination="SXN-S2-NTw" eventType="touchUpInside" id="0we-0K-5mT"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8KV-De-mzF">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <state key="normal" backgroundImage="play-256-down.png"/>
+                                <variation key="heightClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="99" y="200" width="67" height="59"/>
+                                </variation>
+                                <connections>
+                                    <action selector="send:" destination="SXN-S2-NTw" eventType="touchDown" id="ZbF-d4-lPD"/>
+                                    <action selector="up:" destination="SXN-S2-NTw" eventType="touchUpInside" id="2A7-md-b2H"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4cE-Zr-fTg">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <state key="normal" backgroundImage="play-256-top.png"/>
+                                <variation key="heightClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="312" y="99" width="67" height="59"/>
+                                </variation>
+                                <connections>
+                                    <action selector="send:" destination="SXN-S2-NTw" eventType="touchDown" id="bRP-M8-Z99"/>
+                                    <action selector="up:" destination="SXN-S2-NTw" eventType="touchUpInside" id="s4V-el-oa9"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HGa-Qo-eOP">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <state key="normal" backgroundImage="play-256-left.png"/>
+                                <variation key="heightClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="243" y="150" width="67" height="59"/>
+                                </variation>
+                                <connections>
+                                    <action selector="send:" destination="SXN-S2-NTw" eventType="touchDown" id="Bnx-dP-5Cx"/>
+                                    <action selector="up:" destination="SXN-S2-NTw" eventType="touchUpInside" id="Jtb-d9-sZr"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iZZ-rF-xeb">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <state key="normal" backgroundImage="play-256-right.png"/>
+                                <variation key="heightClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="381" y="150" width="67" height="59"/>
+                                </variation>
+                                <connections>
+                                    <action selector="send:" destination="SXN-S2-NTw" eventType="touchDown" id="ADS-4K-1gE"/>
+                                    <action selector="up:" destination="SXN-S2-NTw" eventType="touchUpInside" id="EnJ-r3-Our"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gaa-lj-W0b">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <state key="normal" backgroundImage="play-256-down.png"/>
+                                <variation key="heightClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="312" y="200" width="67" height="59"/>
+                                </variation>
+                                <connections>
+                                    <action selector="send:" destination="SXN-S2-NTw" eventType="touchDown" id="252-TS-JiT"/>
+                                    <action selector="up:" destination="SXN-S2-NTw" eventType="touchUpInside" id="vj0-2e-XoW"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="油门" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mct-oC-bqP">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="43" y="58" width="34" height="21"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N88-iy-i6x">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="93" y="58" width="25" height="21"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bva-LZ-jtL">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="208" y="58" width="22" height="21"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xfp-1K-mIP">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="307" y="58" width="30" height="21"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g3f-WA-2iA">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="400" y="58" width="24" height="21"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="方向" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XBf-Qe-aip">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="161" y="58" width="34" height="21"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="升降" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ETn-zd-jWL">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="259" y="58" width="34" height="21"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="副翼" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rao-Q4-S8E">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="345" y="57" width="34" height="21"/>
+                                </variation>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aRo-m4-0s2">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="油门高"/>
+                                <variation key="heightClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="38" y="270" width="64" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="youmen_high:" destination="SXN-S2-NTw" eventType="touchDown" id="tm2-DV-Jxn"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="48S-eJ-ZZt">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="油门低"/>
+                                <variation key="heightClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="133" y="270" width="62" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="youmen_low:" destination="SXN-S2-NTw" eventType="touchDown" id="uHJ-kW-quy"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P1o-H3-arp">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="锁定"/>
+                                <variation key="heightClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="229" y="270" width="64" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="lock:" destination="SXN-S2-NTw" eventType="touchDown" id="vRb-oj-V8w"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xfP-42-EyE">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="开锁"/>
+                                <variation key="heightClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="319" y="270" width="66" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="unlock:" destination="SXN-S2-NTw" eventType="touchDown" id="gkH-aq-zas"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7SA-0C-2B0">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="回正"/>
+                                <variation key="heightClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="400" y="270" width="66" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="reset:" destination="SXN-S2-NTw" eventType="touchDown" id="UqV-5p-GIG"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="KkU-dG-Dkg"/>
+                                <exclude reference="duO-i3-Hzh"/>
+                                <exclude reference="3dC-sj-YRn"/>
+                                <exclude reference="8KV-De-mzF"/>
+                                <exclude reference="4cE-Zr-fTg"/>
+                                <exclude reference="HGa-Qo-eOP"/>
+                                <exclude reference="iZZ-rF-xeb"/>
+                                <exclude reference="gaa-lj-W0b"/>
+                                <exclude reference="mct-oC-bqP"/>
+                                <exclude reference="N88-iy-i6x"/>
+                                <exclude reference="bva-LZ-jtL"/>
+                                <exclude reference="Xfp-1K-mIP"/>
+                                <exclude reference="g3f-WA-2iA"/>
+                                <exclude reference="XBf-Qe-aip"/>
+                                <exclude reference="ETn-zd-jWL"/>
+                                <exclude reference="Rao-Q4-S8E"/>
+                                <exclude reference="aRo-m4-0s2"/>
+                                <exclude reference="48S-eJ-ZZt"/>
+                                <exclude reference="P1o-H3-arp"/>
+                                <exclude reference="xfP-42-EyE"/>
+                                <exclude reference="7SA-0C-2B0"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact">
+                            <mask key="subviews">
+                                <include reference="KkU-dG-Dkg"/>
+                                <include reference="duO-i3-Hzh"/>
+                                <include reference="3dC-sj-YRn"/>
+                                <include reference="8KV-De-mzF"/>
+                                <include reference="4cE-Zr-fTg"/>
+                                <include reference="HGa-Qo-eOP"/>
+                                <include reference="iZZ-rF-xeb"/>
+                                <include reference="gaa-lj-W0b"/>
+                                <include reference="mct-oC-bqP"/>
+                                <include reference="N88-iy-i6x"/>
+                                <include reference="bva-LZ-jtL"/>
+                                <include reference="Xfp-1K-mIP"/>
+                                <include reference="g3f-WA-2iA"/>
+                                <include reference="XBf-Qe-aip"/>
+                                <include reference="ETn-zd-jWL"/>
+                                <include reference="Rao-Q4-S8E"/>
+                                <include reference="aRo-m4-0s2"/>
+                                <include reference="48S-eJ-ZZt"/>
+                                <include reference="P1o-H3-arp"/>
+                                <include reference="xfP-42-EyE"/>
+                                <include reference="7SA-0C-2B0"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="fangxiangLabel" destination="bva-LZ-jtL" id="CPJ-g1-Y8p"/>
+                        <outlet property="fangxiang_0" destination="duO-i3-Hzh" id="6A2-eM-Zsi"/>
+                        <outlet property="fangxiang_100" destination="3dC-sj-YRn" id="nA3-E1-ZmU"/>
+                        <outlet property="fuyiLabel" destination="g3f-WA-2iA" id="5gG-wO-XxB"/>
+                        <outlet property="fuyi_0" destination="HGa-Qo-eOP" id="P2o-ln-O2x"/>
+                        <outlet property="fuyi_100" destination="iZZ-rF-xeb" id="e7q-11-pfk"/>
+                        <outlet property="shengjiangLabel" destination="Xfp-1K-mIP" id="AEm-u6-m7F"/>
+                        <outlet property="shengjiang_0" destination="gaa-lj-W0b" id="ViJ-f5-f59"/>
+                        <outlet property="shengjiang_100" destination="4cE-Zr-fTg" id="i7q-nB-4SE"/>
+                        <outlet property="youmenLabel" destination="N88-iy-i6x" id="dBI-PW-8jI"/>
+                        <outlet property="youmen_0" destination="8KV-De-mzF" id="sny-od-J2H"/>
+                        <outlet property="youmen_100" destination="KkU-dG-Dkg" id="2Q1-aP-RKj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fhh-eV-ufV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="329" y="360"/>
+        </scene>
+        <!--Characteristic View Controller-->
+        <scene sceneID="79S-tm-POy">
+            <objects>
+                <viewController storyboardIdentifier="control" id="991-uy-vK6" customClass="CharacteristicViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Eg0-Ni-DiA"/>
+                        <viewControllerLayoutGuide type="bottom" id="aTA-nC-oyk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hrj-Ch-mB9">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w8x-kx-DkM">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <state key="normal" backgroundImage="play-256-top.png"/>
+                                <variation key="heightClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="95" y="86" width="67" height="59"/>
+                                </variation>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2YL-v5-Ewb">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <state key="normal" backgroundImage="play-256-left.png"/>
+                                <variation key="heightClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="26" y="137" width="67" height="59"/>
+                                </variation>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xdo-EO-Vbd">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <state key="normal" backgroundImage="play-256-right.png"/>
+                                <variation key="heightClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="164" y="137" width="67" height="59"/>
+                                </variation>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z7q-jJ-2Dn">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <state key="normal" backgroundImage="play-256-down.png"/>
+                                <variation key="heightClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="95" y="187" width="67" height="59"/>
+                                </variation>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tob-uP-14j">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" backgroundImage="end-256.png"/>
+                                <variation key="heightClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="385" y="68" width="81" height="71"/>
+                                </variation>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ib-WP-SRg">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" backgroundImage="stop-256.png"/>
+                                <variation key="heightClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="278" y="68" width="81" height="71"/>
+                                </variation>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cYk-aA-sYb">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" backgroundImage="up-256.png"/>
+                                <variation key="heightClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="385" y="163" width="81" height="71"/>
+                                </variation>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F80-Jk-CjR">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" backgroundImage="down-256.png"/>
+                                <variation key="heightClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="278" y="163" width="81" height="71"/>
+                                </variation>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="w8x-kx-DkM"/>
+                                <exclude reference="2YL-v5-Ewb"/>
+                                <exclude reference="xdo-EO-Vbd"/>
+                                <exclude reference="Z7q-jJ-2Dn"/>
+                                <exclude reference="Tob-uP-14j"/>
+                                <exclude reference="7ib-WP-SRg"/>
+                                <exclude reference="cYk-aA-sYb"/>
+                                <exclude reference="F80-Jk-CjR"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact">
+                            <mask key="subviews">
+                                <include reference="w8x-kx-DkM"/>
+                                <include reference="2YL-v5-Ewb"/>
+                                <include reference="xdo-EO-Vbd"/>
+                                <include reference="Z7q-jJ-2Dn"/>
+                                <include reference="Tob-uP-14j"/>
+                                <include reference="7ib-WP-SRg"/>
+                                <include reference="cYk-aA-sYb"/>
+                                <include reference="F80-Jk-CjR"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="bottom" destination="Z7q-jJ-2Dn" id="rtJ-KQ-7VA"/>
+                        <outlet property="down" destination="F80-Jk-CjR" id="Lbi-9z-IJF"/>
+                        <outlet property="left" destination="2YL-v5-Ewb" id="t8F-HL-ugD"/>
+                        <outlet property="right" destination="xdo-EO-Vbd" id="cLp-51-djN"/>
+                        <outlet property="start" destination="Tob-uP-14j" id="aEJ-NV-U9X"/>
+                        <outlet property="stop" destination="7ib-WP-SRg" id="GpX-Qg-Kgx"/>
+                        <outlet property="top" destination="w8x-kx-DkM" id="bqJ-hw-jII"/>
+                        <outlet property="up" destination="cYk-aA-sYb" id="w33-Pu-9hd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Cr-Tg-x7u" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="954" y="348"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="down-256.png" width="256" height="256"/>
+        <image name="end-256.png" width="256" height="256"/>
+        <image name="play-256-down.png" width="256" height="256"/>
+        <image name="play-256-left.png" width="256" height="256"/>
+        <image name="play-256-right.png" width="256" height="256"/>
+        <image name="play-256-top.png" width="256" height="256"/>
+        <image name="stop-256.png" width="256" height="256"/>
+        <image name="up-256.png" width="256" height="256"/>
+    </resources>
+</document>
